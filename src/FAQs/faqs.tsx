@@ -51,34 +51,36 @@ const Faqs: React.FC = () => {
     };
 
     return (
-        <section className="bg-white py-12 px-4 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
-                Frequently Asked Questions (FAQ’s)
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {faqs.map((faq, index) => (
-                    <div
-                        key={index}
-                        className={`border rounded-lg transition-all duration-300 overflow-hidden ${
-                            activeIndex === index ? "bg-blue-700 text-white" : "bg-white text-blue-700 border-blue-700"
-                        }`}
-                    >
-                        <button
-                            onClick={() => toggleFaq(index)}
-                            className="w-full text-left px-4 py-3 font-medium flex justify-between items-center focus:outline-none"
+        <div className="bg-gray-50">
+            <section className="py-20 px-4 max-w-5xl mx-auto">
+                <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
+                    Frequently Asked Questions (FAQ’s)
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {faqs.map((faq, index) => (
+                        <div
+                            key={index}
+                            className={`border rounded-lg transition-all duration-300 overflow-hidden ${
+                                activeIndex === index ? "bg-blue-700 text-white" : "bg-white text-blue-700 border-blue-700"
+                            }`}
                         >
-                            {faq.question}
-                            <span className="text-xl">{activeIndex === index ? "-" : "+"}</span>
-                        </button>
-                        {activeIndex === index && (
-                            <div className="px-4 pb-4 text-sm">
-                                {faq.answer}
-                            </div>
-                        )}
-                    </div>
-                ))}
-            </div>
-        </section>
+                            <button
+                                onClick={() => toggleFaq(index)}
+                                className="w-full text-left px-4 py-3 font-medium flex justify-between items-center focus:outline-none"
+                            >
+                                {faq.question}
+                                <span className="text-xl">{activeIndex === index ? "-" : "+"}</span>
+                            </button>
+                            {activeIndex === index && (
+                                <div className="px-4 pb-4 text-sm">
+                                    {faq.answer}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </section>
+        </div>
     );
 };
 

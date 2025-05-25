@@ -1,111 +1,61 @@
-import {FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaYoutube} from 'react-icons/fa';
+import React from "react";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
-        <footer className="bg-blue-900 text-white text-sm">
-            <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-6 gap-8">
-                <div>
-                    <h4 className="font-bold text-lg mb-3">About Us</h4>
-                    <ul className="space-y-2">
-                        <li>Our Services</li>
-                        <li>Vision</li>
-                        <li>Team</li>
-                        <li>FAQ</li>
-                        <li>Contact Us</li>
-                        <li>Jobs</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 className="font-bold text-lg mb-3">For Hospital</h4>
-                    <ul className="space-y-2">
-                        <li>Our Services</li>
-                        <li>OPD Camps</li>
-                    </ul>
-                    <h4 className="font-bold text-lg mt-5 mb-3">For Doctors</h4>
-                    <ul className="space-y-2">
-                        <li>Our Services</li>
-                    </ul>
-                    <h4 className="font-bold text-lg mt-5 mb-3">For Partners</h4>
-                    <ul className="space-y-2">
-                        <li>Refer to Us</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 className="font-bold text-lg mb-3">Policy</h4>
-                    <ul className="space-y-2">
-                        <li>Privacy Policy</li>
-                        <li>Editorial Policy</li>
-                        <li>Terms of Use</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 className="font-bold text-lg mb-3">Medical Destinations</h4>
-                    <ul className="space-y-2">
-                        <li>India</li>
-                        <li>Turkey</li>
-                        <li>Thailand</li>
-                    </ul>
-                </div>
-
-                <div className="md:col-span-2">
-                    <h4 className="font-bold text-lg mb-3">Our Offices</h4>
-                    <p><strong>India:</strong><br/>GTT Health Pvt Ltd, Gurgaon, Haryana, INDIA, PIN 122001</p>
-                    <p className="mt-3"><strong>UAE:</strong><br/>GTT Health FZC LLC, Sharjah, United Arab Emirates
+        <footer className="bg-[#1C398E] text-white py-12 px-4 md:px-16">
+            <div className="flex flex-col lg:flex-row justify-between gap-10">
+                {/* Left Column */}
+                <div className="lg:w-1/3">
+                    <img
+                        src="/your-logo.png"
+                        alt="GT Tourism Logo"
+                        className="h-12 mb-4"
+                    />
+                    <p className="text-sm mb-4">
+                        Address: Room 13D, Rongjian Mansion, No. 29, Jianliuma Road, Yuexiu District, Guangzhou City, Guangdong Province, China
                     </p>
-                    <p className="mt-3"><strong>USA:</strong><br/>GTT Health USA LLC, Dover, Delaware, 19901</p>
+                    <button className="bg-white text-[#1C398E] px-5 py-2 rounded-full font-semibold mb-4">
+                        Contact Details
+                    </button>
+                    <p className="text-sm font-semibold">
+                        Hotline: 📞 +86-18214558585
+                    </p>
+                </div>
+
+                {/* Middle Column */}
+                <div className="lg:w-1/3">
+                    <h3 className="text-lg font-semibold mb-4">Useful Links</h3>
+                    <ul className="space-y-2 text-sm">
+                        <li><a href="#" className="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" className="hover:underline">Terms of Service</a></li>
+                        <li><a href="#" className="hover:underline">FAQ</a></li>
+                        <li><a href="#" className="hover:underline">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                {/* Right Column */}
+                <div className="lg:w-1/3 flex flex-col items-center lg:items-end">
+                    <img
+                        src="/wechat-qr.png"
+                        alt="WeChat QR"
+                        className="w-32 h-32 mb-2 border-4 border-white rounded-lg"
+                    />
+                    <p className="text-sm">WeChat</p>
                 </div>
             </div>
 
-            <div className="bg-blue-100 text-blue-900 py-6 px-4">
-                <div
-                    className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center text-center md:text-left gap-6">
-                    <div className="flex items-center justify-center md:justify-start gap-4">
-                        <FaEnvelope size={28}/>
-                        <div>
-                            <p className="font-semibold text-base">Email</p>
-                            <p>hello@GTT.com</p>
-                        </div>
-                    </div>
-
-                    <div className="flex items-center justify-center md:justify-start gap-4">
-                        <FaWhatsapp size={28} className="text-green-600"/>
-                        <div>
-                            <p className="font-semibold text-base">Phone</p>
-                            <p>+91-9971616131</p>
-                        </div>
-                    </div>
-
-                    <div className="flex justify-center md:justify-end">
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Great_Place_to_Work_logo.svg/768px-Great_Place_to_Work_logo.svg.png"
-                            alt="Great Place to Work"
-                            className="h-20"
-                        />
-                    </div>
+            {/* Bottom Row */}
+            <div className="mt-10 border-t border-white/30 pt-6 flex flex-col lg:flex-row justify-between items-center text-sm">
+                <p>© 2025 Global Treatment and Tourism. All Rights Reserved.</p>
+                <div className="flex space-x-4 mt-4 lg:mt-0">
+                    <FaFacebookF className="hover:text-gray-300 cursor-pointer" />
+                    <FaInstagram className="hover:text-gray-300 cursor-pointer" />
+                    <FaTwitter className="hover:text-gray-300 cursor-pointer" />
                 </div>
-
-                <div className="mt-6 text-center">
-                    <div className="flex justify-center space-x-5">
-                        <FaYoutube size={22} className="hover:text-red-600 cursor-pointer"/>
-                        <FaLinkedin size={22} className="hover:text-blue-700 cursor-pointer"/>
-                        <FaFacebook size={22} className="hover:text-blue-500 cursor-pointer"/>
-                        <FaInstagram size={22} className="hover:text-pink-500 cursor-pointer"/>
-                    </div>
-                </div>
-            </div>
-
-            <div className="bg-blue-900 text-center text-xs text-gray-300 py-4 border-t border-blue-800">
-                <p>
-                    Note: GTT Health does not provide medical advice, diagnosis or treatment. All content is for
-                    informational purposes only.
-                </p>
-                <p className="mt-2">© Copyrights 2025 GTT.com. All rights reserved.</p>
             </div>
         </footer>
-    )
-}
+    );
+};
 
 export default Footer;
