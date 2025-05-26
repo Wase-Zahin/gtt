@@ -1,19 +1,27 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import GttLogo from "../assets/gtt_logo.png";
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-[#1C398E] text-white py-12 px-4 md:px-16">
+        <footer className="bg-[#183B4E] text-white py-12 px-4 md:px-16">
             <div className="flex flex-col lg:flex-row justify-between gap-10">
                 {/* Left Column */}
                 <div className="lg:w-1/3">
-                    <img
-                        src="/your-logo.png"
-                        alt="GT Tourism Logo"
-                        className="h-12 mb-4"
-                    />
+                    <div className="flex items-center mb-4">
+                        <img src={GttLogo} alt="GTT Logo" className="h-12 w-auto"/>
+                        <div className="text-left text-sm sm:text-lg font-bold leading-tight">
+                            Global Treatment <br/> and Tourism
+                        </div>
+                    </div>
+                    {/*<img*/}
+                    {/*    src={GttLogo}*/}
+                    {/*    alt="GT Tourism Logo"*/}
+                    {/*    className="h-12 mb-4"*/}
+                    {/*/>*/}
                     <p className="text-sm mb-4">
-                        Address: Room 13D, Rongjian Mansion, No. 29, Jianliuma Road, Yuexiu District, Guangzhou City, Guangdong Province, China
+                        Address: Room 13D, Rongjian Mansion, No. 29, Jianliuma Road, Yuexiu District, Guangzhou City,
+                        Guangdong Province, China
                     </p>
                     <button className="bg-white text-[#1C398E] px-5 py-2 rounded-full font-semibold mb-4">
                         Contact Details

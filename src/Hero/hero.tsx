@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import slider01 from "../assets/slider01.png";
+import hero from "../assets/hero.png";
 
 const Hero: React.FC = () => {
     const navigate = useNavigate();
@@ -27,59 +28,59 @@ const Hero: React.FC = () => {
     };
 
     return (
-        <section className="relative w-full min-h-screen py-12 md:py-20 overflow-hidden">
+        <section className="relative w-full  py-12 md:py-20 overflow-hidden">
             {/* Background image */}
             <img
-                src={slider01}
+                src={hero}
                 alt="Hero Background"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full min-h-full object-cover"
             />
             <div className="absolute inset-0 "></div>
 
-            <div className="relative z-10 container mx-auto h-full flex flex-col md:flex-row items-center justify-between px-6 lg:px-6">
+            <div className="relative z-10 container mx-auto h-full flex flex-col md:flex-row items-center justify-end px-6 lg:px-6">
                 {/* Left content */}
-                <div className=" flex-1 mb-12 md:mb-0 md:pr-12">
-                    <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                        Medical Treatment With Unmatched Personal Care
-                    </h1>
-                    <p className="text-lg md:text-2xl mb-8">
-                        World’s Most Trusted Medical Travel Assistance Platform
-                    </p>
+                {/*<div className=" flex-1 mb-12 md:mb-0 md:pr-12">*/}
+                {/*    <h1 className="text-3xl md:text-5xl font-bold mb-4">*/}
+                {/*        Medical Treatment With Unmatched Personal Care*/}
+                {/*    </h1>*/}
+                {/*    <p className="text-lg md:text-2xl mb-8">*/}
+                {/*        World’s Most Trusted Medical Travel Assistance Platform*/}
+                {/*    </p>*/}
 
-                    <div className="flex items-center space-x-4 mb-6">
-                        {[...Array(5)].map((_, i) => (
-                            <img
-                                key={i}
-                                src={`/assets/patient-${i + 1}.jpg`}
-                                alt={`Patient ${i + 1}`}
-                                className="w-12 h-12 rounded-full border-2 border-white object-cover"
-                            />
-                        ))}
-                    </div>
-                    <p className="text-sm md:text-base">
-                        1,00,000+ Patients Assisted Since 2016
-                    </p>
+                {/*    <div className="flex items-center space-x-4 mb-6">*/}
+                {/*        {[...Array(5)].map((_, i) => (*/}
+                {/*            <img*/}
+                {/*                key={i}*/}
+                {/*                src={`/assets/patient-${i + 1}.jpg`}*/}
+                {/*                alt={`Patient ${i + 1}`}*/}
+                {/*                className="w-12 h-12 rounded-full border-2 border-white object-cover"*/}
+                {/*            />*/}
+                {/*        ))}*/}
+                {/*    </div>*/}
+                {/*    <p className="text-sm md:text-base">*/}
+                {/*        1,00,000+ Patients Assisted Since 2016*/}
+                {/*    </p>*/}
 
-                    <div className="flex items-center mt-4">
-                        <img
-                            src="/assets/google-logo.png"
-                            alt="Google logo"
-                            className="w-8 h-8 mr-2"
-                        />
-                        <span className="text-xl font-semibold">4.7</span>
-                        <div className="flex ml-2">
-                            {[...Array(5)].map((_, i) => (
-                                <svg
-                                    key={i}
-                                    className="w-5 h-5 fill-current text-yellow-400"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <polygon points="9.9,1.1 3.3,19.1 19.8,7.7 0,7.7 16.5,19.1" />
-                                </svg>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                {/*    <div className="flex items-center mt-4">*/}
+                {/*        <img*/}
+                {/*            src="/assets/google-logo.png"*/}
+                {/*            alt="Google logo"*/}
+                {/*            className="w-8 h-8 mr-2"*/}
+                {/*        />*/}
+                {/*        <span className="text-xl font-semibold">4.7</span>*/}
+                {/*        <div className="flex ml-2">*/}
+                {/*            {[...Array(5)].map((_, i) => (*/}
+                {/*                <svg*/}
+                {/*                    key={i}*/}
+                {/*                    className="w-5 h-5 fill-current text-yellow-400"*/}
+                {/*                    viewBox="0 0 20 20"*/}
+                {/*                >*/}
+                {/*                    <polygon points="9.9,1.1 3.3,19.1 19.8,7.7 0,7.7 16.5,19.1" />*/}
+                {/*                </svg>*/}
+                {/*            ))}*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
                 {/* Right form */}
                 <div className="bg-white rounded-2xl shadow-lg w-full max-w-md p-6 relative">

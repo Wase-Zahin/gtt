@@ -6,10 +6,10 @@ const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <header className="bg-blue-500 text-white w-full shadow-md">
+        <header className="bg-[#183B4E] text-white w-full shadow-md">
             <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
                 {/* Left Section: Logo and Brand */}
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center">
                     <img src={GttLogo} alt="GTT Logo" className="h-12 w-auto"/>
                     <div className="text-left text-sm sm:text-lg font-bold leading-tight">
                         Global Treatment <br/> and Tourism
