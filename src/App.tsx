@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Header/header';
 import Hero from './Hero/hero';
-import Sec2 from './Sec2/sec2';
-import Sec5 from './Sec5/sec5';
+import Quotes from './Quotes/quotes.tsx';
 import Faqs from './FAQs/faqs';
 import Footer from './Footer/footer';
 import HowItWorks from "./HowItWorks/howItWorks.tsx";
 import Gallery from "./Gallery/gallery.tsx";
 import Survey from "./Steps/survey.tsx";
 import ThankYou from "./Steps/thankYou.tsx";
+import Services from "./Services/services.tsx";
 
 function App() {
     return (
@@ -21,10 +21,10 @@ function App() {
                         <>
                             <Hero />
                             {/*<Sec1 />*/}
-                            <Sec2 />
+                            <Services />
                             {/*<Sec3 />*/}
                             {/*<Sec4 />*/}
-                            <Sec5 />
+                            <Quotes />
                             <HowItWorks/>
                             {/*<Review />*/}
                             <Faqs />

@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Gallery: React.FC = () => {
+    const { t } = useTranslation();
+
     const placeholderImages = Array.from({ length: 15 }, (_, i) => ({
         id: i,
         src: `https://placehold.co/400x250?text=Image+${i + 1}`,
@@ -10,7 +13,7 @@ const Gallery: React.FC = () => {
     return (
         <section className="py-12 px-4 md:px-16 bg-white">
             <h2 className="text-3xl font-semibold text-center mb-10 text-[#1C398E]">
-                Gallery
+                {t("gallery.heading")}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {placeholderImages.map((image) => (

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface PersonalInfoState {
     name: string;
@@ -11,10 +12,12 @@ interface PersonalInfoState {
 
 const PersonalInfo: React.FC = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
+
     const [formData, setFormData] = useState<PersonalInfoState>({
         name: "",
         email: "",
-        country: "Bangladesh",
+        country: t("form.countryOptions.default"),
         phone: "",
         problem: "",
     });
@@ -36,9 +39,11 @@ const PersonalInfo: React.FC = () => {
     return (
         <div className="relative z-10 container mx-auto h-full flex flex-col md:flex-row items-center justify-end px-6 lg:px-6">
             <div className="bg-white rounded-2xl shadow-lg w-full max-w-md p-6 relative">
+                {/* Heading */}
                 <h2 className="text-2xl font-bold mb-6 text-gray-800">
-                    Let Us Help You
+                    {t("form.heading")}
                 </h2>
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Patient Name */}
                     <input
@@ -46,7 +51,7 @@ const PersonalInfo: React.FC = () => {
                         value={formData.name}
                         onChange={handleChange}
                         type="text"
-                        placeholder="Patient Name"
+                        placeholder={t("form.placeholders.name")}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     />
 
@@ -56,7 +61,7 @@ const PersonalInfo: React.FC = () => {
                         value={formData.email}
                         onChange={handleChange}
                         type="email"
-                        placeholder="Enter email"
+                        placeholder={t("form.placeholders.email")}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     />
 
@@ -67,9 +72,9 @@ const PersonalInfo: React.FC = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     >
-                        <option>Bangladesh</option>
-                        <option>India</option>
-                        <option>China</option>
+                        <option>{t("form.countryOptions.default")}</option>
+                        <option>{t("form.countryOptions.india")}</option>
+                        <option>{t("form.countryOptions.china")}</option>
                     </select>
 
                     {/* Phone (with +880 prefix disabled) */}
@@ -85,7 +90,7 @@ const PersonalInfo: React.FC = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             type="tel"
-                            placeholder="Your Phone number"
+                            placeholder={t("form.placeholders.phone")}
                             className="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                     </div>
@@ -96,27 +101,30 @@ const PersonalInfo: React.FC = () => {
                         value={formData.problem}
                         onChange={handleChange}
                         rows={4}
-                        placeholder="Describe The Current Medical Problem .."
+                        placeholder={t("form.placeholders.problem")}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                     ></textarea>
 
+                    {/* Submit Button */}
                     <button
                         type="submit"
                         className="w-full py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition"
                     >
-                        Get FREE Quote
+                        {t("form.submit")}
                     </button>
                 </form>
+
+                {/* Terms Text */}
                 <p className="text-xs text-gray-500 mt-4">
-                    By submitting the form I agree to the{" "}
+                    {t("form.termsPrefix")}{" "}
                     <a href="#" className="text-blue-600 underline">
-                        Terms of Use
+                        {t("form.termsLink1")}
                     </a>{" "}
-                    and{" "}
+                    {t("form.and")}{" "}
                     <a href="#" className="text-blue-600 underline">
-                        Privacy Policy
+                        {t("form.termsLink2")}
                     </a>{" "}
-                    of Vaidam Health.
+                    {t("form.termsSuffix")}
                 </p>
             </div>
         </div>
