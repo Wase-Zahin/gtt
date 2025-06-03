@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {FaBars, FaTimes} from "react-icons/fa";
 import GttLogo from "../assets/gtt_logo.png";
+import {Link} from "react-router-dom";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -9,12 +10,14 @@ const Header = () => {
         <header className="bg-[#183B4E] text-white w-full shadow-md">
             <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
                 {/* Left Section: Logo and Brand */}
-                <div className="flex items-center justify-center">
-                    <img src={GttLogo} alt="GTT Logo" className="h-12 w-auto"/>
-                    <div className="text-left text-sm sm:text-lg font-bold leading-tight">
-                        Global Treatment <br/> and Tourism
+                <Link to={'/'}>
+                    <div className="flex items-center justify-center ">
+                        <img src={GttLogo} alt="GTT Logo" className="h-12 w-auto"/>
+                        <div className="text-left text-sm sm:text-lg font-bold leading-tight">
+                            Global Treatment <br/> and Tourism
+                        </div>
                     </div>
-                </div>
+                </Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-4">

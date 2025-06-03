@@ -1,6 +1,4 @@
 import React from "react";
-
-// These imports resolve to URLs (paths) to the optimized SVG assets
 import Knee from "../assets/lqa/RHEUMATOLOGY-51.svg";
 import Hip from "../assets/lqa/Hip-Replecement.svg";
 import Brain from "../assets/lqa/Brain-Tumor.svg";
@@ -28,6 +26,21 @@ const LowestQuotesAssuredSection: React.FC = () => {
         { title: "Cervical Cancer",         price: "$4,500", icon: Cervical },
         { title: "Hysterectomy",            price: "$3,000", icon: Hysterectomy },
     ];
+
+    const openWhatsApp = () => {
+        const phone = '8801805205869';
+        const message = encodeURIComponent(
+            'Hello, please contact me regarding https://www.GTT.com.bd, Thank you!'
+        );
+
+        const isMobile = /iPhone|Android|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+        const link = isMobile
+            ? `whatsapp://send?phone=${phone}&text=${message}`
+            : `https://web.whatsapp.com/send?phone=${phone}&text=${message}`;
+
+        window.open(link, '_blank');
+    };
 
     return (
         <section className="px-4 py-16 bg-gray-50">
@@ -72,7 +85,8 @@ const LowestQuotesAssuredSection: React.FC = () => {
                         Get Quote
                     </button>
                     <a
-                        href="https://api.whatsapp.com/send?phone=919971616131&text=Hello,%20please%20contact%20me%20regarding%20https://www.GTT.com?source=wpchat_HPSS,%20Thank%20you!"
+                        onClick={openWhatsApp}
+                        href="#"
                         className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-6 py-2 transition"
                     >
                         <img
@@ -84,9 +98,6 @@ const LowestQuotesAssuredSection: React.FC = () => {
                         />
                         Chat
                     </a>
-                    {/*<button className="bg-green-500 text-white px-6 py-3 rounded-lg">*/}
-                    {/*    Chat*/}
-                    {/*</button>*/}
                 </div>
             </div>
         </section>

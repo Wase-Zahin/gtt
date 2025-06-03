@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import GttLogo from "../assets/gtt_logo.png";
+import WhatsAppQr from "../assets/whatsapp_qr.jpeg";
 
 const Footer: React.FC = () => {
     return (
@@ -27,7 +28,7 @@ const Footer: React.FC = () => {
                         Contact Details
                     </button>
                     <p className="text-sm font-semibold">
-                        Hotline: 📞 +86-18214558585
+                        Hotline: 📞 +880 1805-205869
                     </p>
                 </div>
 
@@ -45,11 +46,11 @@ const Footer: React.FC = () => {
                 {/* Right Column */}
                 <div className="lg:w-1/3 flex flex-col items-center lg:items-end">
                     <img
-                        src="/wechat-qr.png"
-                        alt="WeChat QR"
+                        src={WhatsAppQr}
+                        alt="WhatsApp QR Code"
                         className="w-32 h-32 mb-2 border-4 border-white rounded-lg"
                     />
-                    <p className="text-sm">WeChat</p>
+                    <p className="text-sm">WhatsApp</p>
                 </div>
             </div>
 

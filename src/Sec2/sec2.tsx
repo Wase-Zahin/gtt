@@ -47,6 +47,21 @@ const services = [
 ];
 
 const Sec2 = () => {
+    const openWhatsApp = () => {
+        const phone = '8801805205869';
+        const message = encodeURIComponent(
+            'Hello, please contact me regarding https://www.GTT.com.bd, Thank you!'
+        );
+
+        const isMobile = /iPhone|Android|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+        const link = isMobile
+            ? `whatsapp://send?phone=${phone}&text=${message}`
+            : `https://web.whatsapp.com/send?phone=${phone}&text=${message}`;
+
+        window.open(link, '_blank');
+    };
+
     return (
         <section className="py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4 text-center">
@@ -71,7 +86,8 @@ const Sec2 = () => {
 
                 <div className="mt-10">
                     <a
-                        href="https://api.whatsapp.com/send?phone=919971616131&text=Hello,%20please%20contact%20me%20regarding%20https://www.GTT.com?source=wpchat_HPSS,%20Thank%20you!"
+                        onClick={openWhatsApp}
+                        href="#"
                         className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-6 py-2 transition"
                     >
                         <img

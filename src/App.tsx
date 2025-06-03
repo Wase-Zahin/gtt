@@ -5,10 +5,10 @@ import Sec2 from './Sec2/sec2';
 import Sec5 from './Sec5/sec5';
 import Faqs from './FAQs/faqs';
 import Footer from './Footer/footer';
-import FollowUp from './FollowUp/followUp';
 import HowItWorks from "./HowItWorks/howItWorks.tsx";
 import Gallery from "./Gallery/gallery.tsx";
-import FinalReport from "./FinalReport/finalReport.tsx";
+import Survey from "./Steps/survey.tsx";
+import ThankYou from "./Steps/thankYou.tsx";
 
 function App() {
     return (
@@ -33,8 +33,8 @@ function App() {
                         </>
                     }
                 />
-                <Route path="/follow-up" element={<FollowUp />} />
-                <Route path="/final-report" element={<FinalReport />} />
+                <Route path="/survey" element={<Survey />} />
+                <Route path="/thank-you" element={<ThankYou />} />
             </Routes>
         </BrowserRouter>
     );
