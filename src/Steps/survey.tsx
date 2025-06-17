@@ -21,7 +21,6 @@ const Survey: React.FC = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const location = useLocation();
-    const [submitted, setSubmitted] = useState(false);
 
     const initialPersonal: PersonalInfoState =
         (location.state as PersonalInfoState) || {
@@ -38,146 +37,105 @@ const Survey: React.FC = () => {
         timing: "",
         hospitalPref: "",
     });
+    const [submitting, setSubmitting] = useState(false);
+    const isValid =
+        answers.age.trim() &&
+        answers.doctorPref.trim() &&
+        answers.timing.trim();
 
-    const GOOGLE_FORM_ACTION =
-        "https://docs.google.com/forms/d/e/1FAIpQLScAojPc4zZpU3qEM5qQ41tya21YNe2eE6vfhGxtGsrpdFqQgw/formResponse";
+    // ← point to your Netlify Function
+    const PROXY_URL = "/.netlify/functions/proxy-form";
 
-    const ENTRY_NAME = "entry.837166168";
-    const ENTRY_EMAIL = "entry.445737279";
-    const ENTRY_COUNTRY = "entry.204858248";
-    const ENTRY_PHONE = "entry.610409314";
-    const ENTRY_PROBLEM = "entry.1231513784";
-
-    const ENTRY_AGE = "entry.1281241777";
-    const ENTRY_DOCTOR_PREF = "entry.414428756";
-    const ENTRY_TIMING = "entry.996085864";
-    const ENTRY_HOSPITAL = "entry.1834061005";
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setAnswers((prev) => ({ ...prev, hospitalPref: e.target.value }));
-    };
-
-    const handleAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setAnswers((prev) => ({ ...prev, age: e.target.value }));
-    };
-
-    const isValidStepTwo =
-        answers.age.trim() !== "" &&
-        answers.doctorPref.trim() !== "" &&
-        answers.timing.trim() !== "";
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!isValidStepTwo) return;
-        setSubmitted(true);
-        e.currentTarget.submit();
-    };
+        if (!isValid) return;
 
-    const onIframeLoad = () => {
-        if (submitted) {
-            navigate("/thank-you", { state: initialPersonal });
+        setSubmitting(true);
+        try {
+            const res = await fetch(PROXY_URL, {
+                method: "POST",
+                body: JSON.stringify({ personal: initialPersonal, answers }),
+            });
+            const json = await res.json();
+            if (json.status === "OK") {
+                navigate("/thank-you", { state: initialPersonal });
+            } else {
+                throw new Error(json.message || "Submission failed");
+            }
+        } catch (err: any) {
+            alert("Error submitting form: " + err.message);
+            setSubmitting(false);
         }
     };
 
     return (
         <div className="container mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-4">
-                {t("survey.title")}
-            </h1>
-
-            <form
-                action={GOOGLE_FORM_ACTION}
-                method="POST"
-                target="hidden_iframe"
-                onSubmit={handleSubmit}
-                className="space-y-6 bg-white p-6 rounded-lg shadow"
-            >
-                <input type="hidden" name={ENTRY_NAME} value={initialPersonal.name} />
-                <input type="hidden" name={ENTRY_EMAIL} value={initialPersonal.email} />
-                <input type="hidden" name={ENTRY_COUNTRY} value={initialPersonal.country} />
-                <input type="hidden" name={ENTRY_PHONE} value={initialPersonal.phone} />
-                <input type="hidden" name={ENTRY_PROBLEM} value={initialPersonal.problem} />
-
+            <h1 className="text-2xl font-bold mb-4">{t("survey.title")}</h1>
+            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-lg shadow">
+                {/* AGE */}
                 <div>
-                    <label className="block font-medium">
-                        {t("survey.ageLabel")}
-                    </label>
+                    <label className="block font-medium">{t("survey.ageLabel")}</label>
                     <input
                         value={answers.age}
-                        onChange={handleAgeChange}
+                        onChange={e => setAnswers(a => ({ ...a, age: e.target.value }))}
                         type="text"
                         placeholder={t("survey.agePlaceholder")}
                         className="w-full border-b border-gray-300 py-2 focus:outline-none"
+                        required
                     />
-                    <input type="hidden" name={ENTRY_AGE} value={answers.age} />
                 </div>
-
+                {/* DOCTOR PREF */}
                 <fieldset>
                     <legend className="font-medium">{t("survey.doctorLegend")}</legend>
-                    {t("survey.doctorOptions", { returnObjects: true })?.map((opt: string, idx: number) => (
-                        <label key={idx} className="block mt-2">
+                    {t("survey.doctorOptions", { returnObjects: true })?.map((opt: string, i: number) => (
+                        <label key={i} className="block mt-2">
                             <input
                                 type="radio"
+                                name="doctor"
                                 checked={answers.doctorPref === opt}
-                                onChange={() =>
-                                    setAnswers((prev) => ({ ...prev, doctorPref: opt }))
-                                }
+                                onChange={() => setAnswers(a => ({ ...a, doctorPref: opt }))}
                                 className="mr-2"
+                                required
                             />
                             {opt}
                         </label>
                     ))}
-                    <input type="hidden" name={ENTRY_DOCTOR_PREF} value={answers.doctorPref} />
                 </fieldset>
-
+                {/* TIMING */}
                 <fieldset>
                     <legend className="font-medium">{t("survey.timingLegend")}</legend>
-                    {t("survey.timingOptions", { returnObjects: true })?.map((opt: string, idx: number) => (
-                        <label key={idx} className="block mt-2">
+                    {t("survey.timingOptions", { returnObjects: true })?.map((opt: string, i: number) => (
+                        <label key={i} className="block mt-2">
                             <input
                                 type="radio"
+                                name="timing"
                                 checked={answers.timing === opt}
-                                onChange={() =>
-                                    setAnswers((prev) => ({ ...prev, timing: opt }))
-                                }
+                                onChange={() => setAnswers(a => ({ ...a, timing: opt }))}
                                 className="mr-2"
+                                required
                             />
                             {opt}
                         </label>
                     ))}
-                    <input type="hidden" name={ENTRY_TIMING} value={answers.timing} />
                 </fieldset>
-
+                {/* HOSPITAL */}
                 <div>
-                    <label className="block font-medium">
-                        {t("survey.hospitalLabel")}
-                    </label>
+                    <label className="block font-medium">{t("survey.hospitalLabel")}</label>
                     <input
                         value={answers.hospitalPref}
-                        onChange={handleInputChange}
+                        onChange={e => setAnswers(a => ({ ...a, hospitalPref: e.target.value }))}
                         type="text"
                         placeholder={t("survey.hospitalPlaceholder")}
                         className="w-full border-b border-gray-300 py-2 focus:outline-none"
                     />
-                    <input type="hidden" name={ENTRY_HOSPITAL} value={answers.hospitalPref} />
                 </div>
-
                 <button
                     type="submit"
-                    disabled={!isValidStepTwo}
-                    className={`bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition ${
-                        !isValidStepTwo ? "opacity-50 cursor-not-allowed" : ""
-                    }`}
+                    disabled={!isValid || submitting}
+                    className={`bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition ${(!isValid || submitting) && "opacity-50 cursor-not-allowed"}`}
                 >
-                    {t("survey.submit")}
+                    {submitting ? t("survey.submitting") : t("survey.submit")}
                 </button>
-
-                <iframe
-                    name="hidden_iframe"
-                    style={{ display: "none" }}
-                    title="hidden-iframe"
-                    onLoad={onIframeLoad}
-                />
             </form>
         </div>
     );
