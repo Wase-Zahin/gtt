@@ -49,7 +49,7 @@ const FinalReport: React.FC = () => {
                         <div className="w-full mt-8 max-w-md rounded-xl overflow-hidden border border-blue-200 shadow">
                             <iframe
                                 className="w-full aspect-video"
-                                src="https://www.youtube.com/embed/21X5lGlDOfg"
+                                src="https://www.youtube.com/embed/j_w-9Dfy99I?si=lPvzoikLvnkHdH09"
                                 title="How it works"
                                 allowFullScreen
                             ></iframe>

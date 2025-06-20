@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-interface PersonalInfoState {
-    name: string;
-    email: string;
-    country: string;
-    phone: string;
-    problem: string;
-}
-
-interface SurveyAnswers {
-    age: string;
-    doctorPref: string;
-    timing: string;
-    hospitalPref: string;
+interface FormData {
+    personal: {
+        name: string;
+        email: string;
+        country: string;
+        phone: string;
+        problem: string;
+    };
+    answers: {
+        age: string;
+        doctorPref: string;
+        timing: string;
+        hospitalPref: string;
+    };
 }
 
 const Survey: React.FC = () => {
@@ -22,29 +23,42 @@ const Survey: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const initialPersonal: PersonalInfoState =
-        (location.state as PersonalInfoState) || {
+    const initialData = location.state as FormData || {
+        personal: {
             name: "",
             email: "",
             country: "",
             phone: "",
             problem: "",
-        };
+        },
+        answers: {
+            age: "",
+            doctorPref: "",
+            timing: "",
+            hospitalPref: ""
+        }
+    };
 
-    const [answers, setAnswers] = useState<SurveyAnswers>({
-        age: "",
-        doctorPref: "",
-        timing: "",
-        hospitalPref: "",
-    });
+    const [formData, setFormData] = useState<FormData>(initialData);
     const [submitting, setSubmitting] = useState(false);
-    const isValid =
-        answers.age.trim() &&
-        answers.doctorPref.trim() &&
-        answers.timing.trim();
 
-    // ← point to your Netlify Function
+    const isValid = Boolean(
+        formData.answers.age.trim() &&
+        formData.answers.doctorPref.trim() &&
+        formData.answers.timing.trim()
+    );
+
     const PROXY_URL = "/.netlify/functions/proxy-form";
+
+    const handleSurveyChange = (field: keyof FormData['answers'], value: string) => {
+        setFormData(prev => ({
+            ...prev,
+            answers: {
+                ...prev.answers,
+                [field]: value
+            }
+        }));
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -54,16 +68,19 @@ const Survey: React.FC = () => {
         try {
             const res = await fetch(PROXY_URL, {
                 method: "POST",
-                body: JSON.stringify({ personal: initialPersonal, answers }),
+                body: JSON.stringify({
+                    personal: formData.personal,
+                    answers: formData.answers
+                }),
             });
-            const json = await res.json();
-            if (json.status === "OK") {
-                navigate("/thank-you", { state: initialPersonal });
+
+            if (res.ok) {
+                navigate("/thank-you", { state: formData.personal });
             } else {
-                throw new Error(json.message || "Submission failed");
+                throw new Error("Submission failed");
             }
-        } catch (err: any) {
-            alert("Error submitting form: " + err.message);
+        } catch (err) {
+            alert("Error submitting form");
             setSubmitting(false);
         }
     };
@@ -76,14 +93,15 @@ const Survey: React.FC = () => {
                 <div>
                     <label className="block font-medium">{t("survey.ageLabel")}</label>
                     <input
-                        value={answers.age}
-                        onChange={e => setAnswers(a => ({ ...a, age: e.target.value }))}
+                        value={formData.answers.age}
+                        onChange={e => handleSurveyChange('age', e.target.value)}
                         type="text"
                         placeholder={t("survey.agePlaceholder")}
                         className="w-full border-b border-gray-300 py-2 focus:outline-none"
                         required
                     />
                 </div>
+
                 {/* DOCTOR PREF */}
                 <fieldset>
                     <legend className="font-medium">{t("survey.doctorLegend")}</legend>
@@ -92,8 +110,8 @@ const Survey: React.FC = () => {
                             <input
                                 type="radio"
                                 name="doctor"
-                                checked={answers.doctorPref === opt}
-                                onChange={() => setAnswers(a => ({ ...a, doctorPref: opt }))}
+                                checked={formData.answers.doctorPref === opt}
+                                onChange={() => handleSurveyChange('doctorPref', opt)}
                                 className="mr-2"
                                 required
                             />
@@ -101,6 +119,7 @@ const Survey: React.FC = () => {
                         </label>
                     ))}
                 </fieldset>
+
                 {/* TIMING */}
                 <fieldset>
                     <legend className="font-medium">{t("survey.timingLegend")}</legend>
@@ -109,8 +128,8 @@ const Survey: React.FC = () => {
                             <input
                                 type="radio"
                                 name="timing"
-                                checked={answers.timing === opt}
-                                onChange={() => setAnswers(a => ({ ...a, timing: opt }))}
+                                checked={formData.answers.timing === opt}
+                                onChange={() => handleSurveyChange('timing', opt)}
                                 className="mr-2"
                                 required
                             />
@@ -118,17 +137,19 @@ const Survey: React.FC = () => {
                         </label>
                     ))}
                 </fieldset>
+
                 {/* HOSPITAL */}
                 <div>
                     <label className="block font-medium">{t("survey.hospitalLabel")}</label>
                     <input
-                        value={answers.hospitalPref}
-                        onChange={e => setAnswers(a => ({ ...a, hospitalPref: e.target.value }))}
+                        value={formData.answers.hospitalPref}
+                        onChange={e => handleSurveyChange('hospitalPref', e.target.value)}
                         type="text"
                         placeholder={t("survey.hospitalPlaceholder")}
                         className="w-full border-b border-gray-300 py-2 focus:outline-none"
                     />
                 </div>
+
                 <button
                     type="submit"
                     disabled={!isValid || submitting}

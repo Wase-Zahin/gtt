@@ -32,7 +32,7 @@ const Faqs: React.FC = () => {
                         >
                             <button
                                 onClick={() => toggleFaq(index)}
-                                className="w-full text-left px-4 py-3 font-medium flex justify-between items-center focus:outline-none"
+                                className="w-full cursor-pointer text-left px-4 py-3 font-medium flex justify-between items-center focus:outline-none"
                             >
                                 {faq.question}
                                 <span className="text-xl">{activeIndex === index ? "-" : "+"}</span>

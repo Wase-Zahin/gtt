@@ -1,7 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { useTranslation } from "react-i18next";
 
-// Your icons
 import Knee from "../assets/lqa/RHEUMATOLOGY-51.svg";
 import Hip from "../assets/lqa/Hip-Replecement.svg";
 import Brain from "../assets/lqa/Brain-Tumor.svg";
@@ -13,6 +12,8 @@ import Rhinoplasty from "../assets/lqa/Rhinoplasty.svg";
 import Hair from "../assets/lqa/Hair-Transpalnt.svg";
 import Cervical from "../assets/lqa/cervical-cancer.svg";
 import Hysterectomy from "../assets/lqa/Hysterectomy.svg";
+import PersonalInfo from "../Steps/personalInfo.tsx";
+import ModalWrapper from "../ModalWrapper.tsx";
 
 const icons = [
     Knee,
@@ -23,7 +24,7 @@ const icons = [
     Breast,
     Lung,
     Rhinoplasty,
-    Breast, // reused
+    Breast,
     Hair,
     Cervical,
     Hysterectomy,
@@ -31,6 +32,7 @@ const icons = [
 
 const Quotes: React.FC = () => {
     const { t } = useTranslation();
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const quotes = t("quotes.items", { returnObjects: true }) as {
         title: string;
         price: string;
@@ -74,7 +76,9 @@ const Quotes: React.FC = () => {
                             <p className="text-gray-600">
                                 Starting <span className="font-bold">{quote.price}</span>
                             </p>
-                            <button className="text-red-500 border-none">
+                            <button
+                                onClick={() => setIsModalOpen(true)}
+                                className="text-red-500 cursor-pointer border-none">
                                 {t("quotes.get_quote")}
                             </button>
                         </div>
@@ -85,7 +89,9 @@ const Quotes: React.FC = () => {
             <div className="flex flex-col justify-center items-center mt-12 gap-4">
                 <p>{t("quotes.discover")}</p>
                 <div className="flex gap-4">
-                    <button className="inline-flex items-center justify-center bg-red-500 hover:bg-green-600 text-white font-medium rounded-full px-6 py-2 transition">
+                    <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="inline-flex cursor-pointer items-center justify-center bg-red-500 hover:bg-green-600 text-white font-medium rounded-full px-6 py-2 transition">
                         {t("quotes.get_quote")}
                     </button>
                     <a
@@ -104,6 +110,9 @@ const Quotes: React.FC = () => {
                     </a>
                 </div>
             </div>
+            <ModalWrapper isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <PersonalInfo setIsModalOpen={setIsModalOpen} />
+            </ModalWrapper>
         </section>
     );
 };

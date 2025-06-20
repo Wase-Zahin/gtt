@@ -13,7 +13,7 @@ const translations = {
                 },
                 countryOptions: {
                     default: "Bangladesh",
-                    india: "India",
+                    thailand: "Thailand",
                     china: "China",
                 },
                 submit: "Get FREE Quote",
@@ -106,36 +106,84 @@ const translations = {
                 heading: "Frequently Asked Questions (FAQ’s)",
                 items: [
                     {
-                        question: "What is medical tourism, and why do people travel abroad for medical treatments?",
-                        answer: "Medical tourism involves traveling to another country to receive medical care, often to access better services or more affordable treatment options."
+                        question: "Why should I choose China for treatment?",
+                        answer: "China offers advanced medical facilities, world-class doctors, and superior healthcare services at 30% to 70% lower costs compared to Western countries. Due to visa complexities with India, China is now an easier and new option for Bangladeshis."
                     },
                     {
-                        question: "What is GTT.com, and how does it work?",
-                        answer: "GTT.com connects international patients with trusted hospitals and doctors for treatment in India and other countries."
+                        question: "What is the standard of hospitals in China?",
+                        answer: "Many hospitals in China are rated as '3A-grade', indicating high-quality services and cutting-edge technology. Some hospitals also have international accreditations like JCI (Joint Commission International)."
                     },
                     {
-                        question: "Can GTT.com assist with travel and accommodation arrangements for my medical trip?",
-                        answer: "Yes, we organize airport transfers, book accommodation near the hospitals, arrange interpreters, and assist our patients with money exchange, SIM cards, etc."
+                        question: "Is the Chinese medical visa process easy?",
+                        answer: "Yes, the Chinese embassy has simplified the visa process for Bangladeshi patients. There are no restrictions on obtaining a medical visa for Bangladeshis."
                     },
                     {
-                        question: "How do I request a cost estimate for my treatment through GTT.com?",
-                        answer: "Submit your medical reports or case details via our website or chat, and our medical team will get back with a customized treatment plan and estimate."
+                        question: "What documents are needed to obtain a visa?",
+                        answer: "You will need a valid passport, an invitation letter from a Chinese hospital, proof of financial capability, and a recent photo for the medical visa."
                     },
                     {
-                        question: "What is medical tourism, and why do people travel abroad for medical treatments?",
-                        answer: "Medical tourism involves traveling to another country to receive medical care, often to access better services or more affordable treatment options."
+                        question: "Will you assist with the visa process?",
+                        answer: "Yes, we will fully assist you throughout the visa process so that you can travel to China for treatment with peace of mind."
                     },
                     {
-                        question: "What is GTT.com, and how does it work?",
-                        answer: "GTT.com connects international patients with trusted hospitals and doctors for treatment in India and other countries."
+                        question: "Will there be language issues during treatment in China?",
+                        answer: "No, there will be no language barrier. We provide 24/7 interpreters who will assist you at every step."
                     },
                     {
-                        question: "Can GTT.com assist with travel and accommodation arrangements for my medical trip?",
-                        answer: "Yes, we organize airport transfers, book accommodation near the hospitals, arrange interpreters, and assist our patients with money exchange, SIM cards, etc."
+                        question: "Do you provide hospital guides?",
+                        answer: "Yes, we provide hospital guides who will assist patients during the treatment process and for any other needs."
                     },
                     {
-                        question: "How do I request a cost estimate for my treatment through GTT.com?",
-                        answer: "Submit your medical reports or case details via our website or chat, and our medical team will get back with a customized treatment plan and estimate."
+                        question: "Is the cost of treatment lower than in India?",
+                        answer: "Yes, treatment costs in China are much lower than in Western countries and also more affordable than in India, Thailand, or Singapore. For example, angioplasty costs around $7,900 in India but only about $5,700 in China."
+                    },
+                    {
+                        question: "Do you arrange only for treatment or also for travel?",
+                        answer: "We offer both treatment and travel packages, which may include flight tickets, accommodation, local transport, and sightseeing tours."
+                    },
+                    {
+                        question: "Is halal food available in China?",
+                        answer: "Yes, we understand your religious and dietary needs and can assist you in arranging halal food and accommodating your cultural preferences."
+                    },
+                    {
+                        question: "Is airport pickup and drop-off arranged?",
+                        answer: "Yes, we arrange airport pickup and drop-off for your arrival and departure in China, along with local transportation."
+                    },
+                    {
+                        question: "Is there any follow-up after treatment?",
+                        answer: "Yes, we provide post-treatment follow-up and virtual consultations with Chinese doctors after you return to Bangladesh."
+                    },
+                    {
+                        question: "What types of diseases do you assist with?",
+                        answer: "We assist with advanced treatments for heart disease, cancer, gastroenterology, neurology, organ transplants, and other complex diseases where Chinese hospitals excel."
+                    },
+                    {
+                        question: "Can I take my family members with me?",
+                        answer: "Yes, we support not only the patient but also accompanying family members with travel guidance and hospital assistance."
+                    },
+                    {
+                        question: "Do you provide services only in Kunming hospitals?",
+                        answer: "Currently, we focus on Kunming hospitals but plan to expand to other international centers in China, such as Shanghai."
+                    },
+                    {
+                        question: "Do you provide assistance with insurance?",
+                        answer: "Yes, we can partner with Bangladeshi insurance companies to offer overseas treatment coverage."
+                    },
+                    {
+                        question: "Will my privacy be maintained during treatment?",
+                        answer: "In Chinese public hospitals, privacy may not be on par with Western standards. However, we recommend international departments for private consultations and will inform you in advance."
+                    },
+                    {
+                        question: "Do you offer tourism opportunities besides treatment?",
+                        answer: "Yes, in addition to your treatment, we can arrange sightseeing tours so that you can enjoy the country’s culture and beauty."
+                    },
+                    {
+                        question: "What is your service fee?",
+                        answer: "Our service fee depends on the type of treatment and package you choose. We offer transparent, all-inclusive packages that cover all costs."
+                    },
+                    {
+                        question: "How can I contact you?",
+                        answer: "For more details and a free consultation, you can contact us on WhatsApp at +8801805105869. Our team is ready to assist you."
                     }
                 ]
             },
@@ -197,7 +245,7 @@ const translations = {
                 },
                 countryOptions: {
                     default: "বাংলাদেশ",
-                    india: "ভারত",
+                    thailand: "থাইল্যান্ড",
                     china: "চীন",
                 },
                 submit: "বিনামূল্যে কোটেশন পান",
@@ -289,36 +337,84 @@ const translations = {
                 heading: "প্রায় জিজ্ঞাসিত প্রশ্নাবলি (FAQ)",
                 items: [
                     {
-                        question: "মেডিকেল ট্যুরিজম কী, এবং কেন মানুষ চিকিৎসার জন্য বিদেশে যায়?",
-                        answer: "মেডিকেল ট্যুরিজম মানে হচ্ছে চিকিৎসার জন্য অন্য দেশে ভ্রমণ করা, সাধারণত ভালো সেবা বা সাশ্রয়ী মূল্যের চিকিৎসা পেতে।"
+                        question: "কেন আমি চিকিৎসার জন্য চীনকে বেছে নেব?",
+                        answer: "চীন অত্যাধুনিক চিকিৎসা সুবিধা, বিশ্বমানের ডাক্তার এবং পশ্চিমা দেশগুলির তুলনায় ৩০% থেকে ৭০% কম খরচে উন্নত চিকিৎসা পরিষেবা প্রদান করে। ভারত থেকে ভিসা জটিলতার কারণে বাংলাদেশিদের জন্য চীন এখন একটি নতুন এবং সহজ বিকল্প।"
                     },
                     {
-                        question: "GTT.com কী, এবং এটি কিভাবে কাজ করে?",
-                        answer: "GTT.com আন্তর্জাতিক রোগীদের ভারত ও অন্যান্য দেশের বিশ্বস্ত হাসপাতাল এবং চিকিৎসকদের সাথে সংযুক্ত করে।"
+                        question: "চীনের হাসপাতালগুলির মান কেমন?",
+                        answer: "চীনের অনেক হাসপাতাল '3A-গ্রেড' হিসাবে মনোনীত, যা তাদের উচ্চমানের চিকিৎসা পরিষেবা এবং অত্যাধুনিক প্রযুক্তির প্রমাণ। কিছু হাসপাতালে আন্তর্জাতিক স্বীকৃতি, যেমন JCI (Joint Commission International) রয়েছে।"
                     },
                     {
-                        question: "GTT.com কি আমার চিকিৎসা ভ্রমণের জন্য ভ্রমণ এবং আবাসনের ব্যবস্থা করতে সাহায্য করে?",
-                        answer: "হ্যাঁ, আমরা এয়ারপোর্ট ট্রান্সফার, হাসপাতালের কাছে থাকার জায়গা, দোভাষী, টাকা বিনিময়, সিম কার্ডসহ অন্যান্য প্রয়োজনীয় বিষয়গুলোতে সহায়তা করি।"
+                        question: "চীনের মেডিকেল ভিসা প্রক্রিয়া কি সহজ?",
+                        answer: "হ্যাঁ, চীনা দূতাবাস বাংলাদেশি রোগীদের জন্য মেডিকেল ভিসা প্রক্রিয়া সহজ করেছে। চিকিৎসা ভিসার জন্য বাংলাদেশিদের উপর কোনো ভিসা নিষেধাজ্ঞা নেই।"
                     },
                     {
-                        question: "GTT.com এর মাধ্যমে চিকিৎসার খরচের অনুমান কীভাবে জানতে পারি?",
-                        answer: "আমাদের ওয়েবসাইট বা চ্যাটে আপনার মেডিকেল রিপোর্ট বা কেসের বিস্তারিত পাঠান, এবং আমাদের মেডিকেল টিম আপনার জন্য একটি কাস্টমাইজড চিকিৎসা পরিকল্পনা ও খরচ জানাবে।"
+                        question: "ভিসা পেতে কী কী কাগজপত্র লাগবে?",
+                        answer: "মেডিকেল ভিসার জন্য আপনার একটি বৈধ পাসপোর্ট, চীনা হাসপাতালের আমন্ত্রণপত্র, আর্থিক সামর্থ্যের প্রমাণপত্র এবং সাম্প্রতিক ছবি প্রয়োজন।"
                     },
                     {
-                        question: "মেডিকেল ট্যুরিজম কী, এবং কেন মানুষ চিকিৎসার জন্য বিদেশে যায়?",
-                        answer: "মেডিকেল ট্যুরিজম মানে হচ্ছে চিকিৎসার জন্য অন্য দেশে ভ্রমণ করা, সাধারণত ভালো সেবা বা সাশ্রয়ী মূল্যের চিকিৎসা পেতে।"
+                        question: "আপনারা কি ভিসা প্রক্রিয়াকরণে সহায়তা করবেন?",
+                        answer: "হ্যাঁ, আমরা আপনার সম্পূর্ণ ভিসা প্রক্রিয়াকরণে সহায়তা করব, যাতে আপনি নিশ্চিন্তে চিকিৎসার জন্য চীনে যেতে পারেন।"
                     },
                     {
-                        question: "GTT.com কী, এবং এটি কিভাবে কাজ করে?",
-                        answer: "GTT.com আন্তর্জাতিক রোগীদের ভারত ও অন্যান্য দেশের বিশ্বস্ত হাসপাতাল এবং চিকিৎসকদের সাথে সংযুক্ত করে।"
+                        question: "চীনে চিকিৎসার সময় ভাষা নিয়ে কি কোনো সমস্যা হবে?",
+                        answer: "না, ভাষা নিয়ে কোনো সমস্যা হবে না। আমরা আপনার জন্য ২৪/৭ চীনা থেকে বাংলা অনুবাদক এবং হাসপাতালে গাইড সরবরাহ করব, যারা আপনার প্রতিটি পদক্ষেপে পাশে থাকবেন।"
                     },
                     {
-                        question: "GTT.com কি আমার চিকিৎসা ভ্রমণের জন্য ভ্রমণ এবং আবাসনের ব্যবস্থা করতে সাহায্য করে?",
-                        answer: "হ্যাঁ, আমরা এয়ারপোর্ট ট্রান্সফার, হাসপাতালের কাছে থাকার জায়গা, দোভাষী, টাকা বিনিময়, সিম কার্ডসহ অন্যান্য প্রয়োজনীয় বিষয়গুলোতে সহায়তা করি।"
+                        question: "আপনারা কি হাসপাতালে গাইড সরবরাহ করেন?",
+                        answer: "হ্যাঁ, আমরা রোগীদের জন্য হাসপাতালে গাইড সরবরাহ করি, যারা চিকিৎসা প্রক্রিয়ার সময় এবং অন্যান্য প্রয়োজনে সহায়তা করেন।"
                     },
                     {
-                        question: "GTT.com এর মাধ্যমে চিকিৎসার খরচের অনুমান কীভাবে জানতে পারি?",
-                        answer: "আমাদের ওয়েবসাইট বা চ্যাটে আপনার মেডিকেল রিপোর্ট বা কেসের বিস্তারিত পাঠান, এবং আমাদের মেডিকেল টিম আপনার জন্য একটি কাস্টমাইজড চিকিৎসা পরিকল্পনা ও খরচ জানাবে।"
+                        question: "চিকিৎসার খরচ কি ভারতের চেয়ে কম?",
+                        answer: "হ্যাঁ, চীনে চিকিৎসার খরচ পশ্চিমা দেশগুলির তুলনায় অনেক কম এবং ভারত, থাইল্যান্ড বা সিঙ্গাপুরের চেয়েও যুক্তিসঙ্গত মূল্যে পাওয়া যায়। উদাহরণস্বরূপ, ভারতে অ্যাঞ্জিওপ্লাস্টির খরচ প্রায় $7,900 হলেও চীনে তা প্রায় $5,700।"
+                    },
+                    {
+                        question: "আপনারা কি শুধু চিকিৎসার ব্যবস্থা করেন নাকি ভ্রমণেরও ব্যবস্থা করেন?",
+                        answer: "আমরা চিকিৎসা এবং ভ্রমণ উভয় প্যাকেজই সরবরাহ করি, যার মধ্যে বিমানের টিকিট, আবাসন, স্থানীয় পরিবহন এবং এমনকি দর্শনীয় স্থান ভ্রমণও অন্তর্ভুক্ত থাকতে পারে।"
+                    },
+                    {
+                        question: "চীনে হালাল খাবার পাওয়া যাবে কি?",
+                        answer: "হ্যাঁ, আমরা আপনার ধর্মীয় ও খাদ্যাভ্যাসের চাহিদা বুঝি। আমরা হালাল খাবারের ব্যবস্থা করতে সহায়তা করব এবং আপনার সাংস্কৃতিক প্রয়োজনগুলো পূরণ করার চেষ্টা করব।"
+                    },
+                    {
+                        question: "বিমানবন্দরে পিকআপ এবং ড্রপ-অফের ব্যবস্থা আছে কি?",
+                        answer: "হ্যাঁ, আমরা চীনে আপনার আগমন ও প্রস্থানের জন্য বিমানবন্দর পিকআপ এবং ড্রপ-অফের ব্যবস্থা করি, সাথে স্থানীয় পরিবহনেরও ব্যবস্থা থাকবে।"
+                    },
+                    {
+                        question: "চিকিৎসার পর কি ফলো-আপের ব্যবস্থা আছে?",
+                        answer: "হ্যাঁ, চীন থেকে ফেরার পরেও আপনার সুস্থতা নিশ্চিত করতে আমরা পোস্ট-ট্রিটমেন্ট ফলো-আপ এবং চীনা ডাক্তারদের সাথে ভার্চুয়াল পরামর্শের ব্যবস্থা করি।"
+                    },
+                    {
+                        question: "আপনারা কি ধরনের রোগের চিকিৎসার জন্য সহায়তা করেন?",
+                        answer: "আমরা হৃদরোগ, ক্যান্সার, গ্যাস্ট্রোএন্টারোলজি, নিউরো, অর্গান ট্রান্সপ্ল্যান্ট এবং অন্যান্য জটিল রোগের উন্নত চিকিৎসার জন্য সহায়তা করি, যেগুলিতে চীনের হাসপাতালগুলি বিশেষভাবে পারদর্শী।"
+                    },
+                    {
+                        question: "আমি কি আমার পরিবারের সদস্যদের সাথে নিয়ে যেতে পারব?",
+                        answer: "হ্যাঁ, আমরা শুধু রোগীর জন্য নয়, রোগীর সাথে যাওয়া পরিবারের সদস্যদের জন্যও সম্পূর্ণ সহায়তা প্রদান করি, যার মধ্যে ভ্রমণ নির্দেশনা এবং হাসপাতালে গাইডেন্স অন্তর্ভুক্ত।"
+                    },
+                    {
+                        question: "আপনারা কি শুধু কুনমিং-এর হাসপাতালগুলিতেই পরিষেবা দেন?",
+                        answer: "প্রাথমিকভাবে কুনমিং-এর হাসপাতালগুলিতে মনোযোগ দিলেও, আমরা সাংহাই সহ চীনের অন্যান্য আন্তর্জাতিক চিকিৎসা কেন্দ্রগুলিতেও পরিষেবা সম্প্রসারণের পরিকল্পনা করছি।"
+                    },
+                    {
+                        question: "আপনারা কি বীমা সংক্রান্ত সহায়তা প্রদান করেন?",
+                        answer: "হ্যাঁ, আমরা বাংলাদেশি বীমা সংস্থাগুলির সাথে অংশীদারিত্ব করে বিদেশে চিকিৎসার জন্য কভারেজ অফার করতে পারি।"
+                    },
+                    {
+                        question: "চিকিৎসার সময় কি ব্যক্তিগত গোপনীয়তা বজায় থাকবে?",
+                        answer: "চীনা পাবলিক হাসপাতালগুলিতে কিছু ক্ষেত্রে গোপনীয়তা পশ্চিমা দেশগুলির মতো নাও হতে পারে। তবে, আমরা আন্তর্জাতিক বিভাগগুলিতে ব্যক্তিগত পরামর্শের জন্য সুপারিশ করি এবং আপনার প্রত্যাশা সম্পর্কে আগে থেকেই অবহিত করব।"
+                    },
+                    {
+                        question: "আপনারা কি শুধু চিকিৎসা পরিষেবা প্রদান করেন নাকি পর্যটনেরও সুযোগ আছে?",
+                        answer: "আমরা আপনার চিকিৎসার সাথে সাথে চীনের দর্শনীয় স্থান ভ্রমণেরও ব্যবস্থা করি, যাতে সুস্থতার পাশাপাশি আপনি দেশটির সংস্কৃতি ও সৌন্দর্য উপভোগ করতে পারেন।"
+                    },
+                    {
+                        question: "আপনাদের পরিষেবার জন্য কত টাকা খরচ হবে?",
+                        answer: "আমাদের পরিষেবা ফি চিকিৎসার ধরন এবং আপনার নির্বাচিত প্যাকেজের উপর নির্ভর করে। আমরা স্বচ্ছ, অল-ইনক্লুসিভ প্যাকেজ অফার করি যা সমস্ত খরচ কভার করে।"
+                    },
+                    {
+                        question: "আপনাদের সাথে কিভাবে যোগাযোগ করব?",
+                        answer: "বিস্তারিত জানতে এবং বিনামূল্যে পরামর্শের জন্য আপনি আমাদের WhatsApp 01805105869 নম্বরে যোগাযোগ করতে পারেন। আমাদের দল আপনার সহায়তার জন্য প্রস্তুত।"
                     }
                 ]
             },

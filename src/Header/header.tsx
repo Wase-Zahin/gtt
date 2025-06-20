@@ -3,10 +3,13 @@ import {FaBars, FaTimes} from "react-icons/fa";
 import GttLogo from "../assets/gtt_logo.png";
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import ModalWrapper from "../ModalWrapper.tsx";
+import PersonalInfo from "../Steps/personalInfo.tsx";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const { i18n, t } = useTranslation();
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const toggleLanguage = () => {
         const newLang = i18n.language === "en" ? "bn" : "en";
@@ -29,13 +32,17 @@ const Header = () => {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-4">
                     <button onClick={toggleLanguage}
-                            className="bg-white text-black px-4 py-2 rounded-lg font-semibold">
+                            className="bg-white cursor-pointer text-black px-4 py-2 rounded-lg font-semibold">
                         {t('toggle_language')}
                     </button>
                     <button
-                        className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition">
+                        onClick={() => setIsModalOpen(true)}
+                        className="bg-red-600 cursor-pointer hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition">
                         {t("form.submit")}
                     </button>
+                    <ModalWrapper isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                        <PersonalInfo setIsModalOpen={setIsModalOpen} />
+                    </ModalWrapper>
                 </div>
 
                 {/* Mobile Menu Toggle */}

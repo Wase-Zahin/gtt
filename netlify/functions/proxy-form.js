@@ -1,5 +1,5 @@
 const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwFXhs8WPJgqj-6h2Z_o_mkarTASx-YQeVVoBf295GMrOw4gqwCuBW_-S5z33y1pYVznw/exec";
+    "https://script.google.com/macros/s/AKfycbwTcxokop5Aw5RWvarUcdrOXb3X_murslnrR8b4egdI9OdWl8DpQaUaspM6IexrS4tY1w/exec";
 
 exports.handler = async (event) => {
     if (event.httpMethod === "OPTIONS") {

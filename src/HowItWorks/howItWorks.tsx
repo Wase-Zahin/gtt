@@ -1,15 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import { useTranslation } from "react-i18next";
 
 import Contact from "../assets/hiw/noun-contact-us.svg";
 import FollowUp from "../assets/hiw/noun-follow-up.svg";
 import Cost from "../assets/hiw/Cost.svg";
 import Booking from "../assets/hiw/noun-booking-online.svg";
+import PersonalInfo from "../Steps/personalInfo.tsx";
+import ModalWrapper from "../ModalWrapper.tsx";
 
 const icons = [Contact, Cost, Booking, FollowUp];
 
 const HowItWorks: React.FC = () => {
     const { t } = useTranslation();
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const steps = t("how_it_works.steps", { returnObjects: true }) as string[];
 
     return (
@@ -35,7 +38,7 @@ const HowItWorks: React.FC = () => {
                     <div className="w-full aspect-video max-w-md border-2 border-blue-300 rounded-xl overflow-hidden">
                         <iframe
                             className="w-full h-full"
-                            src="https://www.youtube.com/embed/21X5lGlDOfg"
+                            src="https://www.youtube.com/embed/j_w-9Dfy99I?si=lPvzoikLvnkHdH09"
                             title="How it works"
                             allowFullScreen
                         ></iframe>
@@ -45,10 +48,15 @@ const HowItWorks: React.FC = () => {
 
             {/* Button */}
             <div className="mt-12 text-center">
-                <button className="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-colors">
+                <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="bg-red-500 cursor-pointer text-white px-6 py-3 rounded-full hover:bg-red-600 transition-colors">
                     {t("how_it_works.button")}
                 </button>
             </div>
+            <ModalWrapper isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <PersonalInfo setIsModalOpen={setIsModalOpen} />
+            </ModalWrapper>
         </section>
     );
 };
