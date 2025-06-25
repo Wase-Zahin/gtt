@@ -27,8 +27,6 @@ const FollowUp: React.FC = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const payload = { ...initial, ...answers };
-        // send payload to your API here
-        // then navigate to a thank-you page or back to home
         navigate('/final-report', { state: payload });
     };
 

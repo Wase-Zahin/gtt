@@ -19,6 +19,17 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({ isOpen, onClose, children }
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        if (visible) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [visible]);
+
     if (!visible) return null;
 
     return ReactDOM.createPortal(
