@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import GttLogo from "../assets/gtt_logo.png";
 import WhatsAppQr from "../assets/whatsapp_qr.jpeg";
 
@@ -10,7 +10,6 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-[#183B4E] text-white py-12 px-4 md:px-16">
             <div className="flex flex-col lg:flex-row justify-between gap-10">
-                {/* Left Column */}
                 <div className="lg:w-1/3">
                     <div className="flex items-center mb-4">
                         <img src={GttLogo} alt="GTT Logo" className="h-12 w-auto"/>
@@ -28,7 +27,6 @@ const Footer: React.FC = () => {
                     <p className="text-sm font-semibold">{t("footer.hotline")}</p>
                 </div>
 
-                {/* Middle Column */}
                 <div className="lg:w-1/3">
                     <h3 className="text-lg font-semibold mb-4">{t("footer.linksHeading")}</h3>
                     <ul className="space-y-2 text-sm">
@@ -39,7 +37,6 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
 
-                {/* Right Column */}
                 <div className="lg:w-1/3 flex flex-col items-center lg:items-end">
                     <img
                         src={WhatsAppQr}
@@ -50,13 +47,19 @@ const Footer: React.FC = () => {
                 </div>
             </div>
 
-            {/* Bottom Row */}
             <div className="mt-10 border-t border-white/30 pt-6 flex flex-col lg:flex-row justify-between items-center text-sm">
                 <p>{t("footer.copyright")}</p>
                 <div className="flex space-x-4 mt-4 lg:mt-0">
-                    <FaFacebookF className="hover:text-gray-300 cursor-pointer" />
-                    <FaInstagram className="hover:text-gray-300 cursor-pointer" />
-                    <FaTwitter className="hover:text-gray-300 cursor-pointer" />
+                    <a href="https://www.facebook.com/gttourismbdcn/" target="_blank" rel="noopener noreferrer">
+                        <FaFacebookF className="hover:text-gray-300 cursor-pointer"/>
+                    </a>
+                    <a href="https://www.instagram.com/gttourismbd/" target="_blank" rel="noopener noreferrer">
+                        <FaInstagram className="hover:text-gray-300 cursor-pointer"/>
+                    </a>
+                    <a href="https://www.youtube.com/@GlobalTreatmentandTourism" target="_blank"
+                       rel="noopener noreferrer">
+                        <FaYoutube className="hover:text-gray-300 cursor-pointer"/>
+                    </a>
                 </div>
             </div>
         </footer>
