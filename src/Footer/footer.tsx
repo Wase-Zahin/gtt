@@ -24,7 +24,13 @@ const Footer: React.FC = () => {
                     <button className="bg-white text-[#1C398E] px-5 py-2 rounded-full font-semibold mb-4">
                         {t("footer.contactButton")}
                     </button>
-                    <p className="text-sm font-semibold">{t("footer.hotline")}</p>
+                    <div className="flex items-start">
+                        <p className="text-sm font-semibold mr-2">হটলাইন:</p>
+                        <div className="flex flex-col text-sm font-semibold">
+                            <span>{t("footer.hotlineBD")}</span>
+                            <span>{t("footer.hotlineCN")}</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="lg:w-1/3">

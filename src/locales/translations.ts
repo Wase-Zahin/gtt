@@ -218,7 +218,9 @@ const translations = {
                 bdAddress: "Flat-B4, House-33, Road-7, Sector-4, Uttara, Dhaka-1230",
                 cnAddress: "Room-1104, Lehui Cheng, Gang Wang Street, Fuyang, Hangzhou, China-311400",
                 contactButton: "Contact Details",
-                hotline: "Hotline: 📞 +880 1805-205869",
+                hotlineTxt: "Hotline",
+                hotlineBD: "+880 1805 205 869",
+                hotlineCN: "+86 1885 1873 028",
                 linksHeading: "Useful Links",
                 links: {
                     privacy: "Privacy Policy",
@@ -449,7 +451,9 @@ const translations = {
                 bdAddress: "ফ্ল্যাট-বি৪, হাউজ-৩৩, রোড-৭, সেক্টর-৪, উত্তরা, ঢাকা-১২৩০",
                 cnAddress: "রুম-১১০৪, লেহুই চেং, গাং ওয়াং স্ট্রিট, ফুয়াং, হাংজু, চীন-৩১১৪০০",
                 contactButton: "যোগাযোগের ঠিকানা",
-                hotline: "হটলাইন: 📞 +৮৮০ ১৮০৫-২০৫৮৬৯",
+                hotlineTxt: "হটলাইন",
+                hotlineBD: "+৮৮০ ১৮০৫ ২০৫ ৮৬৯",
+                hotlineCN: "+৮৬ ১৮৮৫ ১৮৭৩ ০২৮",
                 linksHeading: "গুরুত্বপূর্ণ লিংক",
                 links: {
                     privacy: "প্রাইভেসি পলিসি",
