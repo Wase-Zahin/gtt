@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import GttLogo from "../assets/gtt_logo.png";
 import WhatsAppQr from "../assets/whatsapp_qr.jpeg";
+import {Link} from "react-router-dom";
 
 const Footer: React.FC = () => {
     const { t } = useTranslation();
@@ -37,14 +38,14 @@ const Footer: React.FC = () => {
                     <h3 className="text-lg font-semibold mb-4">{t("footer.linksHeading")}</h3>
                     <ul className="space-y-2 text-sm">
                         <li>
-                            <a href="/privacy-policy" className="hover:underline">
+                            <Link to="/privacy-policy" className="hover:underline">
                                 {t("footer.links.privacy")}
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="/terms-conditions" className="hover:underline">
+                            <Link to="/privacy-policy" className="hover:underline">
                                 {t("footer.links.terms")}
-                            </a>
+                            </Link>
                         </li>
                         <li><a href="#" className="hover:underline">{t("footer.links.faq")}</a></li>
                         <li><a href="#" className="hover:underline">{t("footer.links.contact")}</a></li>
