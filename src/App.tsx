@@ -9,6 +9,8 @@ import Gallery from "./Gallery/gallery.tsx";
 import Survey from "./Steps/survey.tsx";
 import ThankYou from "./Steps/thankYou.tsx";
 import Services from "./Services/services.tsx";
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermsConditions from "./TermsConditions";
 
 function App() {
     return (
@@ -35,6 +37,8 @@ function App() {
                 />
                 <Route path="/survey" element={<Survey />} />
                 <Route path="/thank-you" element={<ThankYou />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-conditions" element={<TermsConditions />} />
             </Routes>
         </BrowserRouter>
     );

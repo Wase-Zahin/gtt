@@ -36,8 +36,16 @@ const Footer: React.FC = () => {
                 <div className="lg:w-1/3">
                     <h3 className="text-lg font-semibold mb-4">{t("footer.linksHeading")}</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><a href="#" className="hover:underline">{t("footer.links.privacy")}</a></li>
-                        <li><a href="#" className="hover:underline">{t("footer.links.terms")}</a></li>
+                        <li>
+                            <a href="/privacy-policy" className="hover:underline">
+                                {t("footer.links.privacy")}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/terms-conditions" className="hover:underline">
+                                {t("footer.links.terms")}
+                            </a>
+                        </li>
                         <li><a href="#" className="hover:underline">{t("footer.links.faq")}</a></li>
                         <li><a href="#" className="hover:underline">{t("footer.links.contact")}</a></li>
                     </ul>
