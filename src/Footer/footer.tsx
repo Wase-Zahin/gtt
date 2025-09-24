@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/privacy-policy" className="hover:underline">
+                            <Link to="/terms-conditions" className="hover:underline">
                                 {t("footer.links.terms")}
                             </Link>
                         </li>
